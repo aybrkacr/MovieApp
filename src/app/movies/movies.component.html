@@ -3,11 +3,10 @@
         {{ title }}
     </div>
     <ul class="list-group list-group-flush" *ngFor="let movie of movies">
-        <li class="list-group-item" style="align-content: flex-end; justify-content: end;">
+        <li class="list-group-item justify-content-between d-flex">
                     <span class="badge bg-primary">{{movie.id}}</span> {{movie.name}}
 
-                    <span class="btn-close col-md-6" style="padding-left: 50em;"></span>
-            
+                    <span class="close" style="align-self: end;">x</span>
         </li>
     </ul>
 </div>
