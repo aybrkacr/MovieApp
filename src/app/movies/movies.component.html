@@ -1,4 +1,14 @@
-<h2>{{ title }}</h2>
+<div class="card">
+    <div class="card-header">
+        {{ title }}
+    </div>
+    <ul class="list-group list-group-flush" *ngFor="let movie of movies">
+        <li class="list-group-item" style="align-content: flex-end; justify-content: end;">
+                    <span class="badge bg-primary">{{movie.id}}</span> {{movie.name}}
 
-<div>{{movie.id}}</div>
-<div>{{movie.name}}</div>
+                    <span class="btn-close col-md-6" style="padding-left: 50em;"></span>
+            
+        </li>
+    </ul>
+</div>
+
