@@ -1,6 +1,7 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { Movie } from "../movie";
 import { Movies } from "../movie.datasource";
+import { MovieService } from "../movie.service";
 
 @Component({
     selector: 'movies',
@@ -10,15 +11,23 @@ import { Movies } from "../movie.datasource";
 export class MoviesComponent {
 
     title = "Movies List";
-    movies = Movies;
+    movies: Movie[];
     selectedMovie: Movie;
     isSelected: boolean = false;
 
+    constructor(private movieService: MovieService){}
+
+    ngOnInit(): void{
+        this.getMovies();
+    }
+
     onSelect(movie: Movie): void {
-        if (this.isSelected) {
-            this.isSelected = false;
-        }
-        else { this.isSelected = true; }
+        
         this.selectedMovie = movie;
+
+    }
+
+    getMovies(): void {
+        this.movies = this.movieService.getMovies();
     }
 }
