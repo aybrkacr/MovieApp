@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
-import { Movie } from "../movie";
-import { Movies } from "../movie.datasource";
-import { MovieService } from "../movie.service";
+import { Movie } from "../../models/movie";
+import { Movies } from "../../data-sources/movie.datasource";
+import { MovieService } from "../../services/movie.service";
 
 @Component({
     selector: 'movies',
